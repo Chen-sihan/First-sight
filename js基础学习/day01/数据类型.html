@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型</title>
+</head>
+<body>
+    <script>
+        //数值判断
+        // NaN：not a number    非数字(不是数字)
+        // NaN 与任何值都不相等，包括它本身
+        // isNaN：is not a number   是非数字(不是数字就返回true,是数字就返回false)
+        var str='IT';
+        var num=11;
+        console.log(isNaN(str));    //返回true
+        console.log(isNaN(num));    //返回false
+
+
+        // = 是赋值， == 是判断是否相等， === 全等 判断值和数据类型是否相等
+        console.log(1=='1');    //返回true
+        console.log(1==1);      //返回true
+        console.log(1==='1');   //返回false
+        console.log(1===1);     //返回true
+
+
+        //向body里输出内容
+        document.write('向body里输出内容');
+
+
+        //length 属性可以用来获取字符串的长度
+        var str1='程序员';
+        console.log(str1.length);
+
+
+        //字符串的拼接使用 +
+        //如果 + 两边是数字类型，那么会进行加法运算
+        //只要 + 两边有一个是字符串，就会进行字符串的拼接
+        var numb1=10;
+        var numb2=3;
+        var txt1='前端';
+        var txt2='工程师'
+        console.log(numb1+numb2);
+        console.log(txt1+txt2);
+        console.log(txt1+numb1);
+
+
+        //Boolean 布尔，值为 true和false ，区分大小写
+        //计算机存储 true为1，false为0
+        console.log(Boolean(true));     //输出true
+        console.log(Boolean(false));    //输出false
+        var bool=true;
+        console.log(Boolean(bool));     //输出true
+        console.log(Boolean('bool'));   //输出true
+
+        //false的情况有两种
+        var bool1=0;    //返回false
+        var bool2;      //返回false
+        
+
+    </script>
+</body>
+</html>

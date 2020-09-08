@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型的转换</title>
+</head>
+<body>
+    <script>
+        var num=10;
+        console.log(typeof(num));
+
+        //toString()转换为字符串类型
+        var str=toString(num);
+        console.log(typeof(str));
+
+        //用字符串拼接也能把数字变成字符串
+        var str1=num+'';
+        console.log(typeof(str1));
+
+        //Number()转换为数字类型
+        var str2='20';
+        var str3='it';
+        console.log(Number(str2));  //返回20
+        console.log(Number(str3));  //返回NaN
+
+        //parseInt()转成整数,从左往右转换，碰到了非数字就结束并返回转换结果。如果第一个字符就是非数字，返回NaN
+        var num1=11.11;
+        var num2='12.12';
+        console.log(parseInt(num1));    //返回11
+        console.log(parseInt(num2));    //返回12
+        var num3='10.a6';
+        var num4='1a.06';
+        var num5='a0.6';
+        console.log(parseInt(num3));    //返回10
+        console.log(parseInt(num4));    //返回1
+        console.log(parseInt(num5));    //返回NaN
+
+
+        //parseFloat()转换为浮点数，从左往右转换，会解析第一个小数点，遇到非数字非小数点的字符就会停止并返回结果。如果第一个字符就是非数字非小数点，会返回NaN
+        var nums='10.6a';
+        console.log(parseFloat(nums));  //返回10.6
+        var nums='a10.6';
+        console.log(parseFloat(nums));  //返回NaN
+        var nums='1a.6';
+        console.log(parseFloat(nums));  //返回1
+        var nums='10.a6';
+        console.log(parseFloat(nums));  //返回10
+        var nums='.1a.6';
+        console.log(parseFloat(nums));  //返回0.1
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>两个变量之间的值交换</title>
+</head>
+<body>
+    <script>
+        //将两个变量的值互换
+
+        //方法一：使用临时变量
+        var one='苹果';     //声明变量并赋值
+        var two='西瓜';
+        console.log(one);   //在控制台打印这个变量的值
+        console.log(two);
+
+        var tmp;        //声明变量
+        tmp=one;        //赋值
+        one=two;
+        two=tmp;
+
+        console.log('-----------------');
+        console.log(one);
+        console.log(two);
+
+
+        //方法二：不使用临时变量
+        var num1=10;
+        var num2=70;
+        console.log(num1,num2);     //同时打印两个变量的值
+        var [num1,num2]=[num2,num1];    //ES6
+        console.log('-----------');
+        console.log(num1,num2);
+
+    </script>
+</body>
+</html>
