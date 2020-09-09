@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  <!-- 1  求两个数的最大数 判断一个数是偶数还是奇数  -->
+
+        // <!-- 3,4    -->
+        // prompt()  返回的是一个字符串
+        // var num1 = parseFloat(prompt('请输入第一个值'));
+        // var num2 = parseFloat(prompt("请输入第二个值"));
+        // var max;
+
+        // if (num1 > num2) {
+        //     alert('最大的那个值是:' + num1);
+        //     max = num1;
+        // } else if (num1 < num2) {
+        //     alert('最大的那个值是:' + num2);
+        //     max = num2;
+        // } else {
+        //     alert('两个值一样大 请重新输入');
+        // }
+
+
+        // console.log(max)
+        // if (max % 2 == 0) {                // %  表示取余数// ( %  ===   10/2===5.。。。0 余数为0)   
+        //     alert('最大值是偶数');
+        // } else {
+        //     alert('最大值是奇数');
+        // }
+
+
+
+        // //  4  判断一个人的年龄是否满18岁(是否成年)
+        // var flag = parseInt(prompt('请输入年龄'))
+        // if (flag >= 18) {
+        //     alert('哈哈 可以上网了')
+        // } else {
+        //     alert('过2年再来吧 小样')
+        // }
+
+
+
+
+        // 2 分数转换，把百分制转换成ABCDE <60 E 60-70 D 70-80 C 80-90 B 90 - 100 A
+
+        // var score = parseFloat(prompt('请输入自己的成绩  要见包公了'));
+        // if (score < 60) {
+        //     alert('E  今天晚上准备好挨鞭子')
+        // } else if (score >= 60 && score < 70) {
+        //     alert('d  爸爸现在不想给你讲话 继续努力')
+        // } else if (score >= 70 && score < 80) {
+        //     alert('c  不错  奖励一个鸡腿')
+        // } else if (score >= 80 && score < 90) {
+        //     alert('b   肯德基走起')
+        // } else  if(score>=90&& score<=100){
+        //     alert('a   儿子 过来  爸爸爱你哦')
+        // }else {
+        //     alert(' 你怕是自己写的分数吧 ')
+        // }
+
+
+
+
+        // 3  判断一个年份是闰年还是平年 闰年：能被4整除，但不能被100整除的年份 或者 能被400整
+        var year = parseInt(prompt('请输入年份'))
+        if ((year % 4 === 0 && year % 100 != 0) || (year % 400 == 0)) {
+            alert('闰年:' + year)
+        } else {
+            alert('平年:' + year)
+        }
+
+
+        var weight=parseFloat(prompt('请输入自己的体重 单位是千克'));
+        var height=parseFloat(prompt('请输入自己的身高 单位是米'));
+        var bmi =weight/(height*hright);
+        alert(bmi);
+        if (bmi<=18 && bmi<25) {
+            alert('正常')
+        } else if (bmi>=25 && bmi<30){
+            alert('超重')
+        }else if (bmi>=30 && bmi<35) {
+            alert('轻度肥胖')
+        }else if (bmi>=35 && bmi<40) {
+            alert('中度肥胖')
+        }else {
+            alert('中度肥胖')
+        }
+    </script>
+</body>
+
+</html>

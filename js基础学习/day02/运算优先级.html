@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 优先级从高到底
+        // 1. () 优先级最高
+        // 2. 一元运算符 ++ -- !
+        // 3. 算数运算符 先* / % 后 + -
+        // 4. 关系运算符 > >= < <=
+        // 5. 相等运算符 == != === !==
+        // 6. 逻辑运算符 先&& 后||
+        // 7. 赋值运算符
+
+        //练习
+        var flag = 4 >= 6 || '人' != '阿凡达' && !(12 * 2 == 144) && true;
+        console.log(flag);
+
+
+        var num = 10;
+        var bool = 5 == num / 2 && (2 + 2 * num).toString() === '22';
+        console.log(bool);
+
+    </script>
+</body>
+
+</html>

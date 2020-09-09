@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // && 与 符号两边的表达式都为true时，结果为true，分则为false
+        // || 或 符号两边的表达式只要有一个为true，结果就为true,两个表达式都为flase时，结果为false
+        // ！ 非 取反，如果表达式为true，取反之后为false，如果表达式为false，取反后为true
+
+        // && 与    只要有一个为假，则结果为假
+        // || 或    只要有一个为真，则结果为真
+        // ！ 取反  真变假，假变真
+
+        var bool=true;      //true
+        var num=1;          //true
+        var str='javascript不好学 但是不要放弃';    //true
+        console.log(!bool);     //取反后为false
+        console.log(!num);      //取反后为false
+        console.log(!str);      //取反后为false
+        //只有这6种情况为false：0、false、null、undefined、NaN、''
+
+
+        //  在if 条件判断当中 会把值转换成布尔变量进行比较
+        if(''==true){
+            console.log('真');
+        }else{
+            console.log('假');
+        }
+
+        var a=10;
+        var b=40;
+        if(a>b){
+            console.log('真');
+        }else{
+            console.log('假');
+        }
+
+    </script>
+</body>
+</html>

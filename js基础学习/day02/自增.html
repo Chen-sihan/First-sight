@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自增</title>
+</head>
+<body>
+    <script>
+        //前置自增,先进行自增，再去做运算
+        var a=1;
+        var b=++a + 2;
+        console.log(b);     //4
+        //前置自增，先给自己加1，再做运算，所以是2+2=4
+
+
+        var a=1;
+        var b=++a + ++a;
+        console.log(b);     //5
+        //前面这个a先给自己自增，变成2，然后后面这个a再次自增，变成3，所以是2+3=5
+
+
+        //后置自增，先做运算，再进行自增
+        var a=1;
+        var b=a++ + 2;
+        console.log(b);     //3
+        //后置自增，先运算再自增，所以是1+2=3，然后a自增变成2
+
+
+        var a=1;
+        var b=a++ + a++;
+        console.log(b);     //3
+        //前面这个a返回值为1，然后自增变成2，然后后面这个a就是2，所以是1+2=3，然后后面这个a自增变成3
+
+
+        //练习
+        var a=2;
+        var c=5;
+        var b=3;
+        var d=++a + b++ + c + a++ + a + a++ + b++ + c++ ;
+        //运算时 3  +3    +5  +3   +4   +4    +4   +5+      
+        //运算后 a=5 b=5 c=6
+        console.log(d);     //31
+        console.log(a);     //5 
+        console.log(b);     //5
+        console.log(c);     //6
+
+    </script>
+</body>
+</html>
