@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // break:立即跳出整个循环，即循环结束，开始执行循环后面的内容（直接跳到大括号）
+        // continue:立即跳出当前循环，继续下一次循环（跳到i++的地方）
+
+
+        for (var i = 1; i <= 5; i++) {
+            if (i == 4) {
+                console.log('吃的有虫的包子 丢掉')
+                break; //立即结束整个循环
+            }
+            console.log(i)
+        }
+
+
+
+        for (var i = 1; i <= 5; i++) {
+            if (i == 4) {
+                console.log('吃的有虫的包子 丢掉')
+                continue; //结束当前循环  但是继续下一次
+            }
+            console.log(i)
+        }
+
+
+    </script>
+</body>
+
+</html>

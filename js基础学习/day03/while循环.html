@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // while 也是循环
+        // while(条件判断语句){
+        //     条件满足时执行的语句
+        //     条件判断结束语句，不写就会陷入死循环
+        // } 
+        // var age=19;
+        // while(age>16){
+        //     console.log('条件结束语句');
+        //     age--;
+        // }
+
+        // 计算1-100之间的所有数的和
+        var add = 0;
+        var i = 1;
+        while (i <= 100) {
+            add += i;
+            i++;
+        }
+        console.log(add);
+
+
+
+
+        // 打印100以内 7的倍数
+        var i = 1;
+        var max = 100;
+        while(i<=max){
+            if(i%7==0){
+                console.log(i);
+            }
+            i++;
+        }
+
+        //打印100以内所有偶数
+        while (i <= max) {
+            if (i % 2 == 0) {
+                console.log(i);
+            }
+            i++;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 内层循环控制*的个数 外层循环控制行数
+        // 内层循环，自己循环完了，不满足条件了才会执行 document.write('<br/>')
+        // 这个执行完成后再去判断外层循环是不是满足条件
+
+        //打印一个正三角形
+        var num=parseInt(prompt('请输入行数'));
+        for (var i=1;i<=num;i++){
+            for (var s=1;s<=i;s++){
+                document.write('*');
+            }
+            document.write('<br/>');
+        }
+        
+        //打印一个倒三角形
+        var num=parseInt(prompt('请输入行数'));
+        for (var x=num;x>=1;x--){
+            for (var y=x;y>=1;y--){
+                document.write('*');
+            }
+            document.write('<br/>');
+        }
+
+
+
+        //九九乘法口诀
+        var s=0;
+        for (var a=1;a<=9;a++){
+            for(var b=1;b<=a;b++){
+                s=a*b;
+                document.write(b+'*'+a+'='+s+'&nbsp;&nbsp;&nbsp;&nbsp;');
+            }
+            document.write('<br/>');
+        }
+
+
+        document.write('<br/>');
+        
+
+        //倒着打印九九乘法口诀
+        for (var a=9;a>=1;a--){
+            for(var b=1;b<=a;b++){
+                document.write(b+' x '+a+'='+ a*b +'&nbsp;&nbsp;&nbsp;&nbsp;');
+            }
+            document.write('<br/>');
+        }
+    </script>
+</body>
+</html>

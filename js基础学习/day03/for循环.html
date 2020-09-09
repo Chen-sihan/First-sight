@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 在js中，循环语句有三种，while、do...while、for循环
+
+        // for (初始化条件 ; 结束循环条件 ; 下一次循环条件判断) {
+        //     循环体需要执行的代码 如果条件一直满足，就一直循环，知道条件不满足，结束循环
+        // }
+
+        for (var i = 1; i <= 3; i++) {
+            console.log('循环第'+i+'遍');
+        }
+
+        //循环的本质：
+        // 第一步，先走初始化条件：var i=1;
+        // 接着走结束条件：i<=3 是否成立，如果不成立，立马结束循环
+        // 如果成立，先走{}里面所有的代码，走完后再走 i++ 
+        // 然后 i=2 ，接着判断 i<=3 是否成立，如果成立，接着执行{}里面的代码
+        // 再走 i++ 然后i=3 接着判断i<=3 是否成立，如果成立 接着走 {} 里面的代码
+        // 再继续走 i++ 此时 i=4 接着判断 i<=3是否成立，此时i<=3不成立，立马结束循环
+        // 此时 i=4 
+
+
+        //死循环 无限循环下去
+        // for (var i = 1; i >0; i++) {
+        //     console.log(i);
+        // }
+
+        //循环不走，没有输出结果
+        // for (var i = 1; i>1; i++) {
+        //     console.log(i);
+        // }
+
+        //死循环
+        // for (var i=10;i<=20;i--){
+        //     console.log(i);
+        // }
+
+        //死循环
+        // for (var i=10;i<=20;i--){
+        //     if (i%2==0) {
+        //         i+=3;
+        //         console.log(i);
+        //     }
+        // }
+
+
+        // 打印1-100之间所有数
+        for (let a = 1; a<=100; a++) {
+            console.log(a);
+        }
+        // 求1-100之间所有数的和
+        var m=0;
+        for (let b = 1; b<=100; b++) {
+            m+=b;
+        }
+        console.log(m);
+        // 求1-100之间所有数的平均值
+        var n=0;
+        for (var c = 1; c<=100; c++) {
+            n+=c;
+            
+        }
+        console.log(n/(c-1));
+        // 求1-100之间所有偶数的和
+        var x=0;
+        var y=0;
+        for (var d=1;d<=100;d++) {
+            if(d%2==0){
+                x+=d;
+            }else{
+                y+=d;
+            }
+        }
+        console.log('偶数和为'+x+'奇数和为'+y);
+        // 同时求1-100之间所有偶数和奇数的和
+    </script>
+</body>
+</html>

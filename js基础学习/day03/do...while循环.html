@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // do..while循环和while循环非常像
+        // 二者经常可以互相代替
+        // 但是do..while循环的特点是不管条件成不成立
+        // 都会先执行一次
+        do {
+            console.log('执行');
+        } while (false);
+
+        // 求10o以内所有3的倍数的和
+
+        // 使用do-while循环:输出询问“我爱你，嫁给我吧?”，选择"你喜欢我吗?(y/n)
+        // :"，如果输入为y则打印”我们形影不离“
+        //若输入为n,则继续询问
+        alert('我爱你，嫁给我吧？');
+        do {
+            var a=prompt('你喜欢我吗？(y/n)');
+            if(a=='y'){
+                alert('我们形影不离');
+            }else if(a!='y'){
+                a='n';
+            }
+        } while (a=='n');
+        
+    </script>
+</body>
+</html>
