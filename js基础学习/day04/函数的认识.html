@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的认识</title>
+</head>
+
+<body>
+    <script>
+        //声明函数的基本格式
+        // function 函数的名字可以随便写() {
+        //     具体的函数要执行的代码
+        // }
+
+        function getPrint() {
+            console.log('这是一个函数');
+        }
+        function getPrint2() {
+            console.log('打印2');
+        }
+
+        //调用函数的基本格式
+        //函数名();  通过调用函数名来执行函数体代码
+        getPrint();     //函数的调用 次数没有限制
+        getPrint2();
+        getPrint();     //函数的调用 次数没有限制
+
+
+
+        //封装计算1-100累加和
+        //封装就是在之前的代码上套一个函数，以前的代码怎么写，现在的代码依然怎么写
+        // var add=0;
+        // for(var i=0;i<100;i++){
+        //     add+=i;
+        // }
+        // console.log(add);
+        function getSum() {
+            var add = 0;
+            for (var i = 0; i < 100; i++) {
+                add += i;
+            }
+            console.log(add);
+        }
+        getSum();
+
+
+
+        //函数可以传参数
+        function getSum1(a, b) {   //a,b都是形参,实参传进来之后可以使用
+            var add = 0;
+            for (var i = a; i <= b; i++) {
+                add += i;
+            }
+            console.log(add);
+        }
+        getSum1(1, 2);     //这里都是实参，传给函数用形参接收，然后在函数里使用
+        getSum1(10, 20);
+        getSum1(1, 100);
+        //实参可以写少，但是没有值的形参会是undefined
+
+
+
+        //函数返回值就是return后面的值
+        function fn1(a, b) {
+            console.log(a);
+            console.log(b);
+            return a + b;
+        }
+        var c = fn1(1, 2);
+        console.log(c);
+
+
+
+
+
+        //自调用函数 了解  做框架用
+        (function(){
+            console.log('自己调用自己');
+        })()
+
+
+
+
+
+        //数组函数练习
+        var arr4 = [10, 20, 0, -1, 3, 5];
+        //1 求这个数组里面偶数的和  并且奇数的和    以及 最大的偶数 最大的奇数
+        var even = 0; //偶数
+        var odd = 0; //奇数
+        var arr1 = []; //只写偶数
+        var arr2 = [];  //只写奇数
+        //把奇数和偶数分成两个数组
+        for (var i = 0; i <= arr4.length - 1; i++) {
+            if (arr4[i] % 2 == 0) {
+                even = even + arr4[i]
+                arr1.push(arr4[i])
+            } else {
+                odd = odd + arr4[i];
+                arr2.push(arr4[i])
+            }
+        }
+        document.write('偶数和:' + even);
+        document.write('奇数的和:' + odd);
+
+        console.log(arr1); //偶数数组
+        console.log(arr2)   //奇数数组
+
+        //求最大的奇数和最大的偶数
+        function getVal(myarr, text) {
+            //先假设最大的是数组里的第一个数
+            var max = myarr[0];
+            //循环判断，如果遍历出来的数比假设的数要大，就把遍历出的这个值赋值给max
+            for (var i = 1; i <= myarr.length - 1; i++) {
+                if (max < myarr[i]) {
+                    max = myarr[i]
+                }
+            }
+            document.write('最大的' + text + max);
+        }
+        //传入参数
+        getVal(arr1, '偶数')
+        getVal(arr2, '奇数')
+    </script>
+</body>
+
+</html>
