@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //对象有特征(属性)和行为(方法)
+        // var obj={};             这是一个空对象，字面量空对象，最常用
+        // var obj2=new Object();  这也是一个空对象
+
+        var car={
+            name='奔波儿霸',
+            color='red',
+            num=4,
+            run:function(){
+                console.log('可以驾驶');
+            },
+            stop:function(){
+                console.log('可以刹车');
+            }
+        }
+        //怎么取对象里面的属性，两种方法：对象名.属性名  或  对象名[属性名]
+        console.log(car.name);
+        console.log(car['color']);  //这个属性是固定的，就加引号，如果这个属性是变量，就不加引号
+
+        //怎么取对象里面的行为 或者叫方法
+        //对象名.方法名()
+        car.run();
+
+
+        
+        //this:谁调用这个函数，this就指向谁
+        var zsf={
+            name:['zsf','张三疯'],
+            age:101,
+            hair:true,
+            gongfu:function(){
+                console.log(zsf.name[1]+ '打太极');
+            },
+            drink:function(){
+                console.log(this.name[0] +'喝酒');
+            },
+            sayHi:function(){
+                console.log(this.name[1]+'说你好',this.age+'还是一个大师');
+            }
+        }
+        zsf.gongfu();
+        zsf.drink();
+        zsf.sayHi();
+
+
+
+
+        //工厂函数创建对象  可以当一个模板，可以根据这个模板创建多个不同的对象
+        function createzhanan(name,age,sex){
+            var person=new Object();
+            person.name1=name;
+            person.age1=age;
+            person.sex1=sex;
+            person.times=function(){
+                console.log(this.name1 +'的时间管理');
+            }
+            return person;
+        }
+        //传入参数,用工厂函数创建一个对象
+        var lzx=createzhanan('罗志祥',40,'未知');
+        //调用这个对象里面的方法
+        lzx.times();
+        console.log(lzx);
+
+        //传入参数,用工厂函数创建一个新的对象
+        var aa=createzhanan('炸弹',20,'男');
+        aa.times();
+        console.log(aa);
+
+
+
+
+
+        //构造函数创建对象 函数名字的首字母必须大写
+        function Person(name,age,sec){
+            this.name1=name;
+            this.age1=age;
+            this.sex1=sex;
+            this.sing=function(){
+                console.log(this.name1+'唱歌 跳舞 rap');
+            }
+        }
+        var ldh=new Person('刘德华',55,'男');
+        var zxy=new Person('张学友',55,'男');
+        var gfc=new Person('郭富城',53,'男');
+        var lm =new Person('黎明',54,'男');
+        console.log(ldh);
+        ldh.sing();
+        console.log(zxy);
+        zxy.sing();
+
+
+        // new 具体做了什么？
+        // 1 调用构造函数，在构造函数里面创建一个新的空对象
+        // 2 执行构造函数里面的代码，把this指向这个创建的空对象，执行构造函数里面的代码
+        // 3 等构造函数里面的代码执行完毕后，隐式的返回这个之前创建的新对象
+
+
+
+
+
+        //遍历对象
+        var obj={
+            name:'zs',
+            age:18,
+            sex:'男',
+            getCar:function(){
+                console.log('跑车');
+            }
+        }
+
+        //key是个形参，可以随便写  obj是对象名字
+        for(var key in obj){
+            console.log(key);       //取键
+            console.log(obj[key]);  //取值
+        }
+        obj.getCar();   //函数只能这样写
+
+        //删除对象里的某一个属性
+        delete obj.age;
+
+        //更改对象里某一个值
+        obj.name='ls';
+
+        //清空对象
+        obj={};
+
+        obj=null;
+        
+
+        //给对象添加属性
+        obj.hair='头发没了';
+
+        //给对象添加行为(函数)
+        obj.getrap=function(){
+            console.log('新增唱跳rap');
+        }
+        console.log(obj);
+
+    </script>
+</body>
+</html>

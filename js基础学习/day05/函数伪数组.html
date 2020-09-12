@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //每一个函数都有都有arguments这个属性，使用场景，就是实际传递过来的参数的数量不确定的时候使用的
+        //不知道这个函数有多少参数的时候，用这个属性可以收集该函数的长度
+        //arguments 伪数组 可以遍历 有length属性
+
+        function getSum() {
+            // console.log(arguments)
+            var add = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                // console.log(arguments[i]);
+                add = add + arguments[i];
+            }
+            console.log(add);
+        }
+
+        function getaverge() {
+            // console.log(arguments);
+            var add = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                // console.log(arguments[i]);
+                add = add + arguments[i];
+            }
+            console.log(add / arguments.length);
+        }
+
+        getSum(1, 2, 3, 4);
+        getaverge(1, 2, 3, 4);
+    </script>
+</body>
+
+</html>
