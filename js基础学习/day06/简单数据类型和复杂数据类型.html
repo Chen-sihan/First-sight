@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //简单数据类型 number string null false/true undefined NaN
+        //复复杂数据类型 数组、对象、函数  Array Object function
+
+        //简单数据类型
+        var number = 10;
+        var n = number;
+        number = 100;
+        console.log(number);
+        console.log(n);
+
+        //复杂数据类型
+        var p = {
+            name: 'zs',
+            age: 19,
+            salary: 1000
+        }
+        var p1 = p;
+        p.name = '隔壁老王';
+        console.log(p);
+        console.log(p1);
+
+        console.log('-------------');
+
+        p1.name = '张三疯';
+        console.log(p);
+        console.log(p1);
+    </script>
+</body>
+</html>

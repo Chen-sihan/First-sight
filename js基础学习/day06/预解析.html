@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //案例1
+        // console.log(msg);
+        // if (false){
+        //     var msg='100';
+        // }
+        // console.log(msg);
+
+        //预解析
+        //1把变量的声明提升到当前作用域的最前面，只会提升声明，不会提升赋值
+        //等价于
+        // var msg;
+        // console.log(msg);
+        // if (false){
+        //     msg='100';
+        // }
+        // console.log(msg);
+
+
+        //案例2
+        // console.log(msg);
+        // if(true){
+        //     var msg='100';
+
+        // }
+        // console.log(msg);
+
+        //预解析
+        // var msg;
+        // console.log(msg);
+        // if(true){
+        //     msg='100';
+        // }
+        // console.log(msg);
+
+
+        //1把变量的声明提升到当前作用域的最前面，只会提升声明，不会提升赋值
+        //2把函数的声明提升到当前作用域的最前面，只会提升声明，不会提升调用
+
+        //案例3
+        var a=25;
+        function abc(){
+            alert(a);   //undefined
+            var a=10;
+        }
+        abc();
+
+        //预解析
+        var a;
+        function abc(){
+            //函数内预解析
+            var a;
+            alert(a);
+            a=10;
+        }
+        a=25;
+        abc();
+
+
+        //案例4
+        var num=10;
+        fun();
+        function fun(){
+            console.log(num);
+            var num=20;
+        }
+
+        //预解析
+        var num;
+        function fun(){
+            var num;
+            console.log(num);
+            num=20;
+        }
+        num=10;
+        fun();
+
+
+        //案例5
+        var a=18;
+        f1();
+        function f1(){
+            var b=9;
+            console.log(a);
+            console.log(b);
+            var a='123'
+        }
+
+        //预解析
+        var a;
+        function fi(){
+            var b;
+            var a;
+            b=9;
+            console.log(a);
+            console.log(b);
+            a='123'
+        }
+        a=18;
+        f1();
+
+
+        //如果变量和函数同名的话，函数优先  函数是js的一等公民
+        console.log(a);
+        function a(){
+            console.log('aaaaa');
+        }
+        var a=1;
+        console.log(a);
+
+        //预解析
+        function a(){
+            console.log('aaaaa');
+        }
+        var a;
+        console.log(a);
+        a=1;
+        console.log(a);
+    </script>
+</body>
+</html>

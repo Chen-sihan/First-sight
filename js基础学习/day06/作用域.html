@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //在函数外声明的变量叫全局变量
+        var a = 10;       //这里是全局作用域 任何地方都可以访问到
+
+        function fn() {
+            //在函数内部声明的变量，叫局部变量
+            var b = 20;       //这里是局部作用域 也叫函数作用域 只能在函数内访问
+            var a = '函数内部的a';
+            console.log(a);
+        }
+        fn();
+        // console.log(b);  由于获取不到函数内的变量，会报错
+        
+
+        if (false){
+            var c=100;
+        }
+        console.log(c);     //undefined
+        for(var i=0;i<=10;i++){
+            console.log(i);
+        }
+        console.log(i);
+        //函数内声明的是局部变量，函数外声明的是全局变量
+
+
+
+
+
+
+
+        //特殊情况
+        function fn2(){
+            var msg2='我是局部变量';
+            console.log(msg2);
+        }
+        fn2();
+
+        //var 声明变量  在函数内部如果不使用var 声明的变量就是全局变量 但是不推荐使用
+        function fn3(){
+            msg3='未知变量';
+            console.log(msg3);
+        }
+        fn3();
+        console.log(msg3);
+
+        //局部变量退出作用域后立即销毁，全局变量在关闭浏览器之后销毁
+    </script>
+</body>
+
+</html>

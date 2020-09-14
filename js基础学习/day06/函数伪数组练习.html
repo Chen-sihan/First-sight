@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 请使用arguments完成函数getResult，实现得到输入的所有的数值中的最小值、最大值、平均数、总和等功能
+
+        // ​	作业描述：
+        // ​			函数名：getResult
+        //  ​			函数调用方式：getResult(数值1，数值2，数值3，数值4.....)
+        //  ​			函数功能：返回值是一个对象，这个对象有 sum, max, min, averages等属性，
+        //  分别表示实参的总和、最大值、最小值、平均数等
+
+        function getResult() {
+            //求和功能
+            var mysum = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                mysum = mysum + arguments[i]
+            }
+
+            console.log(mysum)
+
+
+            //求最大值功能
+
+            var mymax = arguments[0] //假设这个是最大值
+            for (var i = 1; i < arguments.length; i++) {
+                if (mymax < arguments[i]) {
+                    mymax = arguments[i]
+                }
+            }
+            console.log(mymax)
+
+
+            // 求最小值功能
+
+
+            var mymin = arguments[0] //假设这个是最大值
+            for (var i = 1; i < arguments.length; i++) {
+                if (mymin > arguments[i]) {
+                    mymin = arguments[i]
+                }
+            }
+            console.log(mymin)
+
+
+
+            // 求平均数
+
+            var myaverages = mysum / arguments.length;
+
+
+
+            console.log(myaverages)
+
+            //返回一个对象
+
+            return {
+                sum: mysum,
+                max: mymax,
+                min: mymin,
+                averages: myaverages
+            }
+        }
+
+
+
+        var result = getResult(4, 3, 10, 2, 1, 5);
+        console.log(result)
+
+
+    </script>
+</body>
+
+</html>
