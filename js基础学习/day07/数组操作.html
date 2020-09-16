@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //空数组
+        // var arr=new Array();
+        // var arr2=[];
+
+        //非空数组
+        // var arr3=new Array(1,2,3);
+        // var arr4=[1,2,3,4];
+
+        //isArray()判断一个变量是不是数组
+        // var str='hello';
+        // var res1=Array.isArray(str);
+        // console.log(res1);
+
+        // var arr4=[1,2,3];
+        // var res2=Array.isArray(arr4);
+        // console.log(res2);
+        // if(res2){
+        //     console.log('arr4是数组');
+        // }else{
+        //     console.log('arr4不是数组');
+        // }
+
+        // var arr4=[1,2,3];
+        // var res3=arr4.toString();
+        // // var res4=toString(arr4);
+        // console.log(res3);
+
+        
+        // unshift()在数组最前面插入项，返回数组的长度
+        // var arr4=[1,2,3,'hello'];
+        // var result=arr4.unshift('我在最前面');
+        // console.log(result);    //打印插入值后的数组长度
+        // console.log(arr4);
+
+        // push()在数组最后面插入项，返回数组长度
+
+        //pop()取出数组中的最后一项，修改length属性
+        // var pop=arr4.pop();
+        // console.log(pop);
+
+        //shift()取出数组的第一个元素，修改length属性
+        // var shift=arr4.shift();
+        // console.log(shift);
+
+        // slice()从当前数组中截取一个新的数组，不影响原来的数组，参数start从0开始，end从1开始
+        // var arr4=[1,2,3,'hello','js'];
+        // var newArr=arr4.slice(1,4);
+        // console.log(newArr);
+        // var newArr2=arr4.slice(1);
+        // console.log(newArr2);
+
+        
+        //splice()删除或替换当前数组的某些项目，参数start,deleteCount,options(要替换的项目)
+        var arr4=[1,2,3,'hello','js'];
+        //删除
+        // var newArr=arr4.splice(2,1);
+        // console.log(newArr);
+        // console.log(arr4);
+        
+        //添加
+        // var newArr=arr4.splice(4,0,'老王');
+        // console.log(arr4);
+
+        //修改
+        // var newArr=arr4.splice(3,1,'哈哈');
+        // console.log(arr4);
+
+        
+        //合并数组
+        var arr1=[1,2,3];
+        var arr2=[4,5,6];
+        var newArr=arr1.concat(arr2);
+        console.log(newArr);
+        console.log(arr1);
+        console.log(arr2);
+
+
+        //清空数组
+        var arr1=[1,2,3];
+        //方法一
+        // arr1=[];
+        //方法二
+        // arr1.length=0;
+        console.log(arr1);
+        //方式一推荐
+        arr=[];
+        //方式二
+        arr.length=0;
+        //方式三
+        arr.splice(0,arr.length);
+    </script>
+</body>
+</html>

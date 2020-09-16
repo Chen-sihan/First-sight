@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1内置对象Math，直接拿出来使用，名字只能用别人的
+
+        //打印一个Π
+        var pi=Math.PI;
+        console.log(pi);
+
+        //求最大值
+        var max1=Math.max('你好','hello')
+        console.log(max1);  //NaN
+        var max2=Math.max(1,2,3,4,5);
+        console.log(max2);      //5
+
+        //取最小值
+        var min=Math.min(10,5,90,40);
+        console.log(min);
+
+        //取绝对值
+        var abs1=Math.abs(100);
+        var abs2=Math.abs(-100);
+        console.log(abs1);
+        console.log(abs2);
+
+        //向上取整
+        var ceil=Math.ceil(1.1);
+        console.log(ceil);
+
+        //向下取整
+        var floor=Math.floor(1.9);
+        console.log(floor);
+
+        //四舍五入
+        var round=Math.round(1.5);
+        console.log(round);     //2
+        var round1=Math.round(-1.5);
+        console.log(round1);     //-1
+        var round2=Math.round(-1.1);  //-1
+        var round3=Math.round(1.1);     //1
+        var round4=Math.round(-1.9);   //-2
+        var round5=Math.round(-1.6)     //-2
+        console.log(round2); 
+        console.log(round3); 
+        console.log(round4); 
+        console.log(round5); 
+
+        //随机数
+        var random=Math.random();     //0-1的随机数，能取到0不能取到1
+        console.log(random);
+
+        //指数
+        var val=Math.pow(2,3);  //2的3次方
+        console.log(val);
+    </script>
+</body>
+</html>

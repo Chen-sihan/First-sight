@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //模拟实现max()/min()
+        var myMath = {
+            max: function () {
+                var max = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (max < arguments[i]) {
+                        max = arguments[i];
+                    }
+                }
+                return max;
+            },
+            min: function () {
+                var min = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (min > arguments[i]) {
+                        min = arguments[i];
+                    }
+                }
+                return min;
+            },
+            add: function () {
+                var add = 0;
+                for (var i = 1; i < arguments.length; i++) {
+                    add += arguments[i];
+                }
+                return add;
+            }
+        }
+
+        var max = myMath.max(12, 8, 6, 94, 32);
+        console.log(max);
+        var min = myMath.min(4, 8, 6, 23, 4);
+        console.log(min);
+        var add = myMath.add(1, 6, 8, 6, 52, 4);
+        console.log(add);
+    </script>
+</body>
+
+</html>

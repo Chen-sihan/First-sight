@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //获取从1970年1月1日0点整到现在为止所过的秒数
+        const start=Date.now();
+        console.log(start);
+
+        //获取标准时间
+        var date=new Date();
+        console.log(date);
+
+        //获取年份
+        var year=date.getFullYear();
+        //获取月份  默认从0开始
+        var month=date.getMonth()+1;
+        //获取日 天数
+        var days=date.getDate();
+        //获取星期
+        var day=date.getDay();
+        var day2=['星期天','星期一','星期二','星期三','星期四','星期五','星期六'];
+        var day3=day2[day];
+        //获取时
+        var hour=date.getHours();
+        //获取分
+        var min=date.getMinutes();
+        //获取秒
+        var seconds=date.getSeconds();
+
+        // var str='今天是'+year+'年'+month+'月'+days+'日'+hour+':'+min+':'+seconds;
+        var str=`今天是${year}年${month}月${days}日${hour}:${min}:${seconds}${day3}`
+        console.log(str);
+
+
+
+
+
+
+        //获取当前时间
+        var date=new Date();
+
+        //获取年份
+        var year=date.getFullYear();
+
+        //获取月份，默认从0开始
+        var month=date.getMonth();
+
+        //获取天数
+        var days=date.getDate();
+
+        //获取小时
+        var hour=date.getHours();
+
+        //获取分钟
+        var min=date.getMinutes();
+
+        //获取秒数
+        var seconds=date.getSeconds();
+
+        //获取星期，默认从0开始 [0-6]
+        var day1=date.getDay();
+        var day2=['星期天','星期一','星期二','星期三','星期四','星期五','星期六'];
+        var day3=day2[day1];
+
+        var str=`现在是${year}年${month}月${days}日${hour}:${min}:${seconds} ${day3}`;
+        document.write(str);
+    </script>
+</body>
+</html>

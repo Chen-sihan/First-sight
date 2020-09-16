@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //定时器
+        setInterval(() => {
+            getColor();
+            getRandom(30, 40);
+        }, 1000);
+
+
+        //一上来先执行一次，定时器会有一个延迟，先执行一次，避免刚运行时是空白的
+        getColor();
+        getRandom(30, 40);
+
+
+        //随机生成颜色RGB
+        function getColor() {
+            var red = getRandom(0, 255);
+            var green = getRandom(0, 255);
+            var blue = getRandom(0, 255);
+            document.body.style.backgroundColor = `rgb(${red},${green},${blue})`;
+        }
+
+
+        //`rgb(${red},${green},${blue})` 反引号，可以直接在里面写html代码，如果有变量，就写在${}里面
+
+
+
+        //随机数
+        function getRandom(min, max) {
+            var get_val = Math.floor(Math.random() * (max - min + 1)) + min;
+            console.log(get_val);
+            return get_val;
+
+        }
+    </script>
+</body>
+
+</html>

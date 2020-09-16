@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //求10-20之间的随机整数
+        var random = Math.random();   //只能取[0,1)
+        var one = Math.floor(Math.random() * (20 - 10 + 1)) + 10;
+        console.log(one);
+
+
+        //取任意数之间的随机整数
+        function getRandom(min, max) {
+            var get_val = Math.floor(Math.random() * (max - min + 1)) + min;
+            return get_val;
+        }
+        var get = getRandom(30, 50);
+        console.log(get);
+
+
+
+        //随机生成颜色RGB
+        function getColor() {
+            var red = getRandom(0, 255);
+            var green = getRandom(0, 255);
+            var blue = getRandom(0, 255);
+            document.body.style.backgroundColor = `rgb(${red},${green},${blue})`;
+        }
+        getColor();
+        //`rgb(${red},${green},${blue})` 反引号，可以直接在里面写html代码，如果有变量，就写在${}里面
+
+    </script>
+</body>
+
+</html>

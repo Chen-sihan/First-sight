@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //设置最后的时间
+        var endDate=new Date('2020-12-12 00:00:00');
+        //打印该时间对应的总毫秒数
+        console.log(endDate.valueOf());
+        // console.log(endDate);
+
+        //获取当前时间
+        var startDate=new Date();
+        //打印当前时间对应的毫秒数
+        console.log(startDate.valueOf());
+
+        //算出从现在到结束时间一共有多少秒
+        var away=(endDate-startDate)/1000;
+        console.log(away);
+
+        //1天是多少秒 60*60*24
+        var day=Math.floor(away/60/60/24);
+        console.log(day);
+
+        //算出小时，不足1天的就是剩下的小时
+        var hour=Math.floor(away/60/60%24);
+        console.log(hour);
+
+        //算出剩下的分钟
+        var min=Math.floor(away/60%60);
+        console.log(min);
+
+        //算出剩下的秒数
+        var seconds=Math.floor(away%60);
+        console.log(seconds);
+
+        document.write(`距离双12还有：${day}天${hour}小时${min}分钟${seconds}秒`);
+
+    </script>
+</body>
+</html>
