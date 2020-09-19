@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str='  我爱 中华人民共和国     ';
+
+        // charAt() 获取指定位置处字符
+        // var a=str.charAt(3);
+        console.log(str.charAt(3));
+        // charCodeAt() 获取指定位置处字符的ASCII码
+        // var a=str.charCodeAt(3);
+        console.log(str.charCodeAt(3));
+        // str[0] HTML5，IE8+支持 和charAt()等效
+        // var a=str[3];
+        console.log(str[3]);
+
+
+        //  2 字符串操作方法
+        var a='我爱中华人民共和国';
+        var b='日复一日，年复一年';
+
+        // concat() 拼接字符串，等效于+，+更常用
+        console.log(a+b);
+        console.log(a.concat(b));
+
+        // slice() 从start位置开始，截取到end位置，end取不到
+        // var c=a.slice(2,a.length);
+        // var c=a.slice(2,9);
+        console.log(a.slice(2,9));
+
+        // substring() 从start位置开始，截取到end位置，end取不到
+        console.log(a.substring(2,9));
+
+        // substr(start,length) 从start位置开始，截取length个字符
+        // var c=a.substr(2,7);
+        console.log(a.substr(2,7));
+
+
+        //  3 位置方法
+        var str1='北大青鸟，简称北大';
+
+        // indexOf() 返回指定内容在元字符串中的位置
+        // var a=str1.indexOf(3);
+        console.log(str1.indexOf('鸟'));
+
+        // lastIndexOf() 从后往前找，只找第一个匹配的
+        // var a=str1.lastIndexOf('北');
+        console.log(str1.lastIndexOf('北'));
+
+
+        //  4 去除空白
+        var str2='  我爱 中华人民共和国     ';
+
+        // trim() 只能去除字符串前后的空白,中间的空白不能去除
+        // var a=str2.trim();
+        console.log(str2.trim());
+
+
+        //  5 大小写转换方法
+        var a1='abcd';
+        var b1='ABCDE';
+
+        // toLocaleUpperCase() 转换大写
+        var a=a1.toLocaleUpperCase();
+        console.log(a);
+        // toLocaleLowerCase() 转换小写
+        var b=b1.toLocaleLowerCase();
+        console.log(b);
+
+        //  6 其它
+        var str3='我爱中华人民共和国';
+        // search()返回搜索到的文字的下标，只能搜索连续的字符
+        var c=str3.search('中华');
+        console.log(c);
+
+        // replace()替换字符串里面的某一个字符，如果出现多个同样的字符，只能改前面一个
+        var c=str3.replace('中华','华夏');
+        console.log(c);
+
+        // join()把数组变成字符串
+        var arr=['天','下','第','一'];
+        var c=arr.join();
+        console.log(c);
+
+        //split()把字符串变成数组
+        var c=str3.split();
+        console.log(c);
+        // fromCharCode()把ASCII码转换成字符串
+        console.log(String.fromCharCode(101, 102, 103)); 
+
+
+
+
+
+
+
+
+
+
+
+
+        // 把字符串中所有的o替换成   !
+        var s = 'abcoefoxyozzopp';
+        var newStr=s.replace(/o/g,'!');
+        console.log(newStr);
+
+
+        // 判断一个字符串中出现次数最多的字符，统计这个次数
+        var s = 'abacoefoxyozzoppppppp';
+        //思路
+        // 创建空数组 
+        //1 循环找到这个字符 
+        //2 if 条件什么  符合要求  看对象 有没有这个值 如果有就+1  如果没有就是第一次出现 
+
+        var obj={};
+        for(var i=0;i<s.length;i++){
+            var chart=s.charAt(i);
+            if(obj[chart]){
+                obj[chart]++;
+            }else{
+                obj[chart]=1;
+            }
+            // 这个if可以写成三元表达式
+            // obj[chart]?obj[chart]++:obj[chart]=1;
+        }
+        console.log(obj);
+
+        var max=0;
+        var maxKey;
+        var newArr=[];
+        for(var key in obj){
+            if(obj[key]>max){
+                max=obj[key];
+                maxKey=key;
+            }
+        }
+        console.log(max);
+        console.log(maxKey);
+        
+    </script>
+</body>
+
+</html>

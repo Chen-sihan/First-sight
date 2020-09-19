@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // indexOf(),在数组里找元素，从前往后找
+        //没找到就返回-1，找到了就返回当前这个元素的索引值
+        //默认从第一个开始找，如果找到了就返回第一个，后面不继续找了
+        var arr=['篮球','足球','地球','排球','篮球'];
+        var index=arr.indexOf('地球');
+        console.log(index);
+
+
+        //lastIndexOf()从后往前找，返回索引，索引不变
+        // var arr=['篮球','足球','地球','排球'];
+        var last=arr.lastIndexOf('地球');
+        console.log(last);
+
+
+        //join('参数可以随便写或者不写，不写默认就是逗号')
+        //参数写什么元素就用用什么分割
+        // var str=arr.join();
+        var str=arr.join(' | ');
+        console.log(str);
+
+
+
+
+
+        // 将一个字符串数组输出为|分割的形式，比如“刘备|张飞|关羽”。使用两种方式实现
+        var arr=['刘备','关羽','张飞'];
+
+        //方式一
+        var str1=arr.join(' | ');
+        console.log(str1);
+
+        //方式二
+        //先把数组转换为字符串，找到里面的每一个,并把,换成|
+        var str=arr.toString();
+        // console.log(str);
+        var str2='';
+        for(i=0;i<str.length;i++){
+            if(str[i]==','){
+                str2+=' | ';
+            }else{
+                str2=str2+str[i];
+            }
+        }
+        console.log(str2);
+        
+
+
+
+
+
+
+        //将一个字符串数组的元素的顺序进行翻转
+        // ['a','b','c','d']->['d','c','b','a']
+        var arr=['a','b','c','d'];
+
+        //方式一
+        //把数组倒着遍历，然后把遍历出来的元素依次放进一个新数组里
+        var newArr=[];
+        for (var i=arr.length-1;i>=0;i--){
+            newArr.push(arr[i]);
+        }
+        console.log(newArr);
+
+        //方式二
+        var newArr2=arr.reverse();
+        console.log(newArr2);
+
+
+
+
+
+
+
+
+
+        // 工资的数组[1500, 1200, 2000, 2100, 1800,3500],把工资超过2000的删除
+        var arr=[1500, 1200, 2000, 2100, 1800,3500];
+
+        //方式一
+        var newArr=[];
+        for(var i=0;i<arr.length;i++){
+            if(arr[i]<=2000){
+                newArr.push(arr[i]);
+            }
+        }
+        console.log(newArr);
+
+        //方式二
+        var newArr2=arr.filter(item=>item<=2000);
+        console.log(newArr2);
+
+
+
+
+
+
+
+        // ["c", "a", "z", "a", "x", "a"]找到数组中每一个a出现的位置   
+        // var arr = ["c", "a", "z", "a", "x", "a", "a"];
+
+        // var a = 0;
+        // for (i = 0; i < arr.length; i++) {
+        //     for (j = a; j < arr.length; j++) {
+        //         var index = arr.indexOf('a', a + 1);
+        //         console.log(index);
+        //     }
+
+        //     a = index;
+        // }
+
+
+        //第一次从数组的第0项开始找  如果找到了就返回这个索引  接着从当前的返回的这个索引的下一位开始找 
+        //循环开始找  结束条件就是找不到了 返回-1 就结束
+        var myindex = -1
+        var newArr = [];
+        var arr = ["c", "a", "z", 'a', "a", "x", 'c', "a", 'a', 'a'];
+        do {
+            myindex = arr.indexOf('a', myindex + 1);
+            if (myindex != -1) {
+
+                newArr.push(myindex)
+            }
+        } while (myindex != -1)
+
+        console.log(newArr)
+
+
+
+
+
+
+
+
+
+        // 编写一个方法去掉一个数组的重复元素
+        var arr = ['c', 'a', 'z', 'a', 'x', 'a','z'];
+
+        //方式一
+        var newArr=[];
+        for(var i=0;i<arr.length;i++){
+            var index=arr.indexOf(arr[i]);
+            if(newArr.indexOf(arr[i])<0){
+                newArr.push(arr[i]);
+            }
+        }
+        console.log(newArr);
+
+        //方式二
+        var a=[...new Set(arr)];
+        console.log(a);
+
+
+
+
+
+
+        //尝试
+        //去重复
+        // var arr = ['c', 'a', 'z', 'a', 'x', 'a', 'c', 'z', 'b'];
+        var arr1=[1,5,3,3,3,5,5,1,2,1,4,6,8];
+        for (var i = 0; i < arr1.length; i++) {
+            for (var j = i + 1; j < arr1.length; j++) {
+                if (arr1[j] == arr1[i]) {
+                    arr1.splice(j--, 1);
+                }
+            }
+        }
+        console.log(arr1);
+
+
+        //方法二
+        var aa=[...new Set(arr1)];
+        console.log(aa);
+
+
+
+
+        //出现最多的元素
+        var a=0;
+        var b=0;
+        var arr2=[1,5,3,3,3,5,5,1,2,1,4,6,8];
+        for (var i = 0; i < arr2.length; i++) {
+            for (var j = i + 1; j < arr2.length; j++) {
+                if (arr2[j] == arr2[i]) {
+                    a++;
+                }
+            }
+            if (b<a) {
+                b=a;
+            }
+        }
+        console.log(b);
+    </script>
+</body>
+</html>
