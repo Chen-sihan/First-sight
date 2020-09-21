@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .divBox2{
+            /* width: 200px; */
+            height: 200px;
+            background-color: pink;
+            font-size: 40px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="divBox1">点一点</div>
+    <div id="divBox2">2</div>
+
+
+    <script>
+        //通过id获取元素
+        //document.getElementById('元素id')
+        var div1 = document.getElementById('divBox1');
+        var div2 = document.getElementById('divBox2');
+        console.log(div1);
+        console.log(div2);
+
+        //1通过id获取这个div
+        //2获取到这个元素后可以做什么事情
+        var div=document.getElementById('divBox1');
+        //on 绑定的意思
+        //click 点击的意思  单击事件
+        div.onclick=function(){
+            // alert('点了我一下，这是问候');
+            div.style.color='red';
+            div.style.fontSize='50px';
+            // div.style.display='none';
+        }
+
+
+
+
+        //style 表示样式 含有所有的css样式
+        //用js去给元素设置样式的时候   background-color-->backgroundColor
+        //能设置样式  一定要加 '='
+        var div1=document.getElementById('divBox1');
+        //基本格式  div1.style.样式的属性='需要设置的值'
+        // div1.style.color='green'
+
+        //能获取样式，直接写    只能获取行内样式
+        // var w=div1.style.width;
+        // console.log(w);     //空
+
+        var c=div1.style.color;
+        console.log(c);
+
+        var w=div1.style.width;
+        console.log(w);
+
+
+
+
+
+
+
+        //需求：点击这个div的时候给这个div设置基本的样式(w:300px h:300px bgc:pink font:40px 边框5px solid blue)
+        //1找人
+        var div2=document.getElementById('divBox2');
+        //2做事(绑定事件)
+        div2.onclick=function(){
+            //3具体需要执行什么事
+            div2.style.width='300px';
+            div2.style.height='300px';
+            div2.style.backgroundColor='pink';
+            div2.style.fontSize='40px';
+            div2.style.border='5px solid blue';
+        }
+
+    </script>
+</body>
+
+</html>

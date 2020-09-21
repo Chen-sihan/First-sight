@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="输入啥嘞" id="txt">
+
+    <script>
+        //事件 
+        //focus 获取焦点，高亮 
+        //blur 失去焦点
+
+
+        //需求，获取焦点 input 发生变化，变大，边框变红
+        //失去焦点 input 恢复原始的样式
+        
+        var txt=document.getElementById('txt');
+        txt.onfocus=function(){
+            console.log('获取了焦点');
+            txt.style.width='250px';
+            txt.style.height='60px';
+            txt.style.border='5px solid red';
+            txt.style.fontSize='50px';
+            txt.placeholder='';
+        }
+        txt.onblur=function(){
+            console.log('失去了焦点');
+            txt.style.width='';
+            txt.style.height='';
+            txt.style.border='';
+            txt.style.fontSize='';
+            txt.placeholder='输入啥嘞';
+        }
+    </script>
+</body>
+</html>

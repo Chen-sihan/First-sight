@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mydiv{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 0 auto;
+        }
+        .red{
+            color: green;
+        }
+        .div{
+            border:5px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="divBox" class="">通过属性 类样式 className 设置div样式</div>
+    <button id="btn">点击按钮给div设置类</button>
+    <button id="btn1">点击按钮给div删除类</button>
+    <button id="btn2">点击按钮给div切换类</button>
+
+
+    <script>
+        //属性  类样式 className
+        var divBox=document.getElementById('divBox');
+        var btn=document.getElementById('btn');
+        var btn1=document.getElementById('btn1');
+        var btn2=document.getElementById('btn2');
+
+        //添加类名
+        btn.onclick=function(){
+            //这个添加类名不会干掉本身含有的类名
+            // divBox.classList.add('要添加的类名1','类名2','类名3')
+            divBox.classList.add('div')
+        }
+
+        //删除类名
+        btn1.onclick=function(){
+            // divBox.classList.remove('要删除的类名1','类名2','类名3');
+            divBox.classList.remove('red');
+        }
+
+        //toggle 切换类名，如果有这个类名就删除，没有这个类名就添加
+        btn2.onclick=function(){
+            divBox.classList.toggle('red');
+            divBox.classList.toggle('div');
+        }
+    </script>
+</body>
+</html>

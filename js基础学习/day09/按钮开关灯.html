@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <button id="openBtn">开灯</button>
+    <button id="closeBtn">关灯</button>
+
+
+    <script>
+        //两个按钮 开关灯
+        //点击关灯按钮，页面变黑
+        //点击开灯按钮，页面变白
+
+        //1找人
+        //2做事(绑定点击事件)
+        //3具体事情，页面发生变化
+        
+        var body=document.getElementById('body');
+        body.style.transition='all 1s';
+        var open=document.getElementById('openBtn');
+        var close=document.getElementById('closeBtn');
+        
+        open.onclick=function(){
+            body.style.backgroundColor='#fff';
+        }
+        close.onclick=function(){
+            body.style.backgroundColor='#000';
+        }
+    </script>
+
+</body>
+</html>

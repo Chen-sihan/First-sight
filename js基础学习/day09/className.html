@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mydiv{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 0 auto;
+        }
+        .red{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="divBox" class="">通过属性 类样式 className 设置div样式</div>
+    <button id="btn">点击按钮给div设置样式</button>
+
+
+    <script>
+        //属性  类样式 className
+        var divBox=document.getElementById('divBox');
+        var btn=document.getElementById('btn');
+        btn.onclick=function(){
+            //className 这是给元素添加类名,多个类名之间要用空格隔开
+            //但是它会把这个元素本身拥有的类名干掉，要重新添加
+            divBox.className='mydiv red';
+            // divBox.className+='mydiv red'; 这个可以在原有的类名上添加类名，但是点击一次按钮就会添加一次
+        }
+    </script>
+</body>
+</html>

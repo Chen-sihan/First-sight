@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <!-- <button id="btn">开关</button> -->
+    <input id="btn" type="button" value="关灯">
+
+
+    <script>
+        //一个按钮控制开关灯
+        // 点击关灯：页面变黑，字变为开灯；
+        // 点击开灯：页面变白，字变为关灯；
+
+
+        //假设flag为true 为开灯
+        var flag=true;
+
+        //1找人
+        var body=document.getElementById('body');
+        body.style.transition='all 1s';     //body的过渡效果
+        var btn=document.getElementById('btn');
+
+        //2做事
+        btn.onclick=function(){
+            //3具体执行什么事情
+            if (flag) {
+                body.style.backgroundColor='#000';
+                //设置文本内容，如果是表单元素 input form textarea 采用 value
+                //如果不是表单元素 div span a ul li 等  采用 innerHTML
+                btn.value='开灯';
+                flag=false;     //每次点击按钮之后就改变一次flag
+            } else {
+                body.style.backgroundColor='#fff';
+                btn.value='关灯';
+                flag=true;
+            }
+        }
+
+    </script>
+</body>
+</html>
